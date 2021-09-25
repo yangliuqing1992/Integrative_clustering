@@ -488,7 +488,7 @@ pk=function(e){
   return(sapply(1:K, function(x){return(sum(e==x))}))
 }
 
-BIC_FengYang=function(A,e)
+BIC_JCGS=function(A,e)
   
 {
   K=max(e)
@@ -598,5 +598,5 @@ write.csv(result,paste("labels_",as.character(K),".csv",sep=""),row.names = F)
 
 
 ## Print out BIC and CBIC(lambda = 0.5, 2) values
-cat("BIC_A_IGlabels, K=",K,"\n","BIC=",BIC_FengYang(A,l.pred),"\n","CBIC0.5=",CBIC(A, l.pred, lambda=0.5),
+cat("BIC_A_IGlabels, K=",K,"\n","BIC=",BIC_JCGS(A,l.pred),"\n","CBIC0.5=",CBIC(A, l.pred, lambda=0.5),
     "\n","CBIC2=",CBIC(A,l.pred,lambda=2),"\n")
