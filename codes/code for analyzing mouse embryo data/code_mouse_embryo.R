@@ -591,7 +591,6 @@ HC=EM(df,initial$p_int,initial$para_int,maxit=5000,tol=10^-4)
 l.pred.X=HC$e
 
 ## write labels for each method out
-
 result=data.frame(rownames(df),e,l.pred,initial$cl,l.pred.X,e.A,l.pred.A)
 names(result)=c("gene","ig_int","ig","km_x","hc","sc_a","pl_sc")
 write.csv(result,paste("labels_",as.character(K),".csv",sep=""),row.names = F)
